@@ -3,7 +3,23 @@ import { InMemoryCache } from 'apollo-cache-inmemory'
 import { HttpLink } from 'apollo-link-http'
 import gql from 'graphql-tag'
 
+/**
+ * Create a new apollo client and export as default 
+ */
 
-const client = new ApolloClient()
+const link = new HttpLink({ uri: 'http://rickandmortyapi.com/graphql' })
+const cache = new InMemoryCache()
 
-export default client
+const client = new ApolloClient({
+    link, 
+    cache
+})
+//shorthand method 
+const query = gql`
+{characters(page: $page, filter: $filter) {
+    results{
+      fullName:name
+      characterID: id
+      __typename
+    }}`
+export default client 
