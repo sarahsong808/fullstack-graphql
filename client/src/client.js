@@ -16,10 +16,13 @@ const client = new ApolloClient({
 })
 //shorthand method 
 const query = gql`
-{characters(page: $page, filter: $filter) {
-    results{
-      fullName:name
-      characterID: id
-      __typename
-    }}`
+    {
+        characters(page: $page, filter: $filter) {
+            results{
+                fullName:name
+                characterID: id
+        }
+    }
+}`
+
 export default client 
