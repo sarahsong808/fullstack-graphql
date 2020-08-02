@@ -18,12 +18,13 @@ const client = new ApolloClient({
 const query = gql`
     {
         characters {
-            results{
+            results {
                 id
                 name
         }
     }
-}`
+}
+`
 
 client.query({ query })
     .then(result => console.log(result))
