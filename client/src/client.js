@@ -11,21 +11,21 @@ const link = new HttpLink({ uri: 'http://rickandmortyapi.com/graphql' })
 const cache = new InMemoryCache()
 
 const client = new ApolloClient({
-    link, 
+    link,
     cache
 })
 //shorthand method 
 const query = gql`
     {
-        characters(page: $page, filter: $filter) {
+        characters {
             results{
-                fullName:name
-                characterID: id
+                id
+                name
         }
     }
 }`
 
-client.query({query})
-    .then(result = console.log(result))
+client.query({ query })
+    .then(result => console.log(result))
 
 export default client 
