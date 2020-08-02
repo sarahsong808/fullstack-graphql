@@ -25,4 +25,7 @@ const query = gql`
     }
 }`
 
+client.query({query})
+    .then(result = console.log(result))
+
 export default client 
