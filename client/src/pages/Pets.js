@@ -6,7 +6,9 @@ import { useQuery, useMutation } from '@apollo/react-hooks'
 import Loader from '../components/Loader'
 
 export default function Pets () {
+
   const [modal, setModal] = useState(false)
+  const [] = useQuery()
   
   const onSubmit = input => {
     setModal(false)

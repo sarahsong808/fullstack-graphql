@@ -15,18 +15,18 @@ const client = new ApolloClient({
     cache
 })
 //shorthand method 
-const query = gql`
-    {
-        characters {
-            results {
-                id
-                name
-        }
-    }
-}
-`
+// const query = gql`
+//     {
+//         characters {
+//             results {
+//                 id
+//                 name
+//         }
+//     }
+// }
+// `
 
 client.query({ query })
     .then(result => console.log(result))
 
-export default client 
+export default client; 
