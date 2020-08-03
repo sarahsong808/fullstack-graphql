@@ -7,7 +7,7 @@ import gql from 'graphql-tag'
  * Create a new apollo client and export as default 
  */
 
-const link = new HttpLink({ uri: 'http://rickandmortyapi.com/graphql' })
+const link = new HttpLink({ uri: 'http://localhost:4000/' })
 const cache = new InMemoryCache()
 
 const client = new ApolloClient({

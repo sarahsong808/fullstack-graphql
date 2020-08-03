@@ -5,11 +5,22 @@ import NewPet from '../components/NewPet'
 import { useQuery, useMutation } from '@apollo/react-hooks'
 import Loader from '../components/Loader'
 
+
+const query = gql`
+  query Name {
+    whatever {
+      field
+    }
+  }
+  `
+
 export default function Pets () {
 
   const [modal, setModal] = useState(false)
-  const [] = useQuery()
-  
+
+  //get back response from server into empty array
+  const [{data, loading}] = useQuery(query)
+
   const onSubmit = input => {
     setModal(false)
   }
